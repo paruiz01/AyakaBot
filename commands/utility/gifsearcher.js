@@ -8,7 +8,7 @@ module.exports = {
   .addStringOption(option => option.setName('query').setDescription('What to search for').setRequired(true)),
   async execute (interaction) {
   
-    await interaction.deferReply({ ephemeral: true });
+    await interaction.deferReply({ ephemeral: false });
 
     const {options} = interaction;
     const query = options.getString('query');
@@ -27,5 +27,5 @@ module.exports = {
     } catch (e) {
       return await interaction.editReply({ content: 'No gifs found!' });
     }
-  }
-}
+  },
+};
