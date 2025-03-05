@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const superagent = require('superagent');
+require('dotenv').config();
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -12,7 +13,7 @@ module.exports = {
 
     const {options} = interaction;
     const query = options.getString('query');
-    const key = 'AIzaSyAhgVaC0mPjhLLWlqo-emtpjl88ha53FOM';
+    const key = process.env.TENOR_API_KEY;
     const clientkey = "AyakaBot";
     const lmt = 8;
 
